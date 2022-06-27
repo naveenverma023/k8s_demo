@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: naveen-role-binding
+  namespace: frontend
+subjects:
+- kind: User
+  name: 03f7bda4-7ed1-40de-9917-8d1a544c69b7
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: naveen-role
+  apiGroup: rbac.authorization.k8s.io

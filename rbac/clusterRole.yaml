@@ -1,0 +1,8 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: naveen-role
+rules:
+- apiGroups: ["", "v1", "apps"]
+  resources: ["deployments"]
+  verbs: ["get", "watch", "list", "create"]

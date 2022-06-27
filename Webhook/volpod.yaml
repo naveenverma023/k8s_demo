@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-pod
+  namespace: frontend
+spec:
+  containers:
+    - name: test
+      image: nginx
+      volumeMounts:
+        - name: config-vol
+          mountPath: /var/lib/cm
+  volumes:
+    - name: config-vol
+      hostPath:
+        path: /
+        type: Directory
